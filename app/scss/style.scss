@@ -1,0 +1,86 @@
+body {
+  width: 2550px;
+  height: 3580px;
+  font-family: "Raleway", sans-serif;
+  color:plum;
+}
+.name {
+  font-size: 120px;
+  line-height: 120px;
+  text-transform: uppercase;
+  color: #2f3137;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+.work-now {
+  margin-top: 0px;
+  margin-bottom: 57px;
+  font-size: 44px;
+  letter-spacing: 4px;
+  color: #1174ae;
+  font-weight: 300;
+  font-style: italic;
+}
+.introduction {
+  width: 820px;
+  height: 255px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 56px;
+  color: #2f3137;
+  text-align: left;
+  margin-bottom: 100px;
+}
+.main-content {
+  margin-left: 735px;
+  margin-top: 130px;
+}/* Стилі для заголовка */
+.head2 {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 800;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Відступи між елементами h3 */
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -45px; /* Відстань від верхнього краю заголовка */
+  width: 660px;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+/* Стилі для фону і позиціонування контейнера */
+.grey-color {
+  padding: 50px 136px 102px 140px; /* Відступи за годинниковою стрілкою: верх, праворуч, низ, ліворуч */
+  width: 2550px; /* Фіксована ширина контейнера */
+  height: 672px; /* Фіксована висота контейнера */
+  background-color: #2f3137; /* Фоновий колір */
+  box-sizing: border-box; /* Включає padding і border у загальні розміри */
+  overflow: hidden; /* Уникає прокрутки */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start; 
+}
+
+.head2{
+  margin-left: 104px;
+ 
+}
+
+/* Опційні стилі для відступів між елементами */
+.about h3 {
+  margin: 0; /* Щоб уникнути непотрібних відступів зовні */
+}

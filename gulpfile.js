@@ -1,31 +1,52 @@
-//визначення нового завдання Gulp з ім'ям html
+import gulp from "gulp";
+import cssnano from "gulp-cssnano";
+import autoprefixer from "gulp-autoprefixer";
+import imagemin from "gulp-imagemin";
+import concat from "gulp-concat";
+import uglify from "gulp-uglify";
+import rename from "gulp-rename";
+import browserSync from "browser-sync";
+import * as sass from "sass";
+import gulpSass from "gulp-sass";
+
+const sassCompiler = gulpSass(sass);
+
 gulp.task("html", function () {
   return gulp
-    .src("app/*.html")
-    .pipe(gulp.dest("dist")) //копіює оптимізовані дані в діст
-    .pipe(browserSync.stream()); //оновленння сторінки в браузері
+    .src("app/html/*.html")
+    .pipe(gulp.dest("dist"))
+    .pipe(browserSync.stream());
 });
-// Таска для компіляції SCSS у CSS
-gulp.task('scss', function () {
-  return src("app/scss/*.scss") // Вибір файлів SCSS
-    .pipe(sass()) // Компіляція SCSS у CSS
-    .pipe(cssnano()) // Мінімізація CSS
-    .pipe(rename({ suffix: ".min" })) // Додавання суфіксу .min до файлу
-    .pipe(dest("dist/css")); // Збереження результату
+
+gulp.task("scss", function () {
+  return gulp
+    .src("app/scss/*.scss")
+    .pipe(sassCompiler().on("error", sassCompiler.logError))
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 2 versions"],
+        cascade: false,
+      })
+    )
+    .pipe(cssnano())
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("dist/css"))
+    .pipe(browserSync.stream());
 });
+
 gulp.task("scripts", function () {
   return gulp
     .src("app/js/*.js")
-    .pipe(concat("scripts.js")) // об'єднує всі JS файли в один
-    .pipe(uglify()) //стискання файлу для підвищення швидкості завантаження
-    .pipe(rename({ suffix: ".min" })) // перейменовуєм шоб позначити мінімізовану версію
-    .pipe(gulp.dest("dist/js")) //Копіює згенеровані JavaScript-файли до папки dist/js
+    .pipe(concat("scripts.js"))
+    .pipe(uglify())
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("dist/js"))
     .pipe(browserSync.stream());
 });
 
 gulp.task("imgs", function () {
   return gulp
-    .src("app/img/*.+(jpg|jpeg|png|gif|PNG)")
+    .src("app/img/*.+(jpg|jpeg|png|gif)")
     .pipe(
       imagemin({
         progressive: true,
@@ -33,21 +54,21 @@ gulp.task("imgs", function () {
         interlaced: true,
       })
     )
-    .pipe(gulp.dest("dist/imgs"));
+    .pipe(gulp.dest("dist/images"));
 });
 
 gulp.task("watch", function () {
   browserSync.init({
     server: {
-      baseDir: "app",
+      baseDir: "dist",
     },
   });
   gulp
-    .watch("app/*.html", gulp.series("html"))
+    .watch("app/html/*.html", gulp.series("html"))
     .on("change", browserSync.reload);
   gulp.watch("app/js/*.js", gulp.series("scripts"));
-  gulp
-    .watch("app/scss/*.scss", gulp.series("scss"))
-    .on("change", browserSync.reload);
+  gulp.watch("app/scss/*.scss", gulp.series("scss"));
   gulp.watch("app/img/*.+(jpg|jpeg|png|gif)", gulp.series("imgs"));
 });
+
+gulp.task("default", gulp.series("html", "scss", "scripts", "imgs", "watch"));
