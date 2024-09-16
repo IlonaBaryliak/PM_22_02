@@ -2,7 +2,6 @@ body {
   width: 2550px;
   height: 3580px;
   font-family: "Raleway", sans-serif;
-  color:plum;
 }
 .name {
   font-size: 120px;
@@ -34,26 +33,86 @@ body {
 .main-content {
   margin-left: 735px;
   margin-top: 130px;
-}/* Стилі для заголовка */
+}/* Основні стилі для контейнера grey-color */
+.grey-color {
+  padding: 50px 136px 102px 140px;
+  width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
+  height: 672px; /* Висота контейнера */
+  background-color: #2f3137;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  position: relative; /* Додаємо позицію відносно для можливого позиціонування */
+  overflow: hidden; /* Сховати вихідний контент */
+
+}
+
+/* Стилі для колонок */
+.column {
+  position: relative;
+  transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Плавний перехід для кольору, ширини та висоти */
+  background-color: #2f3137; /* Початковий колір фону */
+}
+
+/* Встановлення початкових розмірів колонок */
+.column.skills, .column.hobbies, .column.languages {
+  flex: 1;
+  height: 100%; /* Висота колонок відповідає висоті батьківського контейнера */
+}
+
+/* Зміна кольору і розміру для контейнера skills при наведенні */
+.column.skills:hover {
+  background-color: #1174ae; /* Колір фону при наведенні */
+  width: 760px; /* Ширина при наведенні */
+  height: 670px; /* Висота при наведенні */
+  z-index: 1; /* Підняти над іншими колонками */
+}
+
+/* Зміна кольору і розміру для контейнера hobbies при наведенні */
+.column.hobbies:hover {
+  background-color: #1174ae; /* Колір фону при наведенні */
+  width: 760px; /* Ширина при наведенні */
+  height: 670px; /* Висота при наведенні */
+  z-index: 1; /* Підняти над іншими колонками */
+}
+
+/* Зміна кольору і розміру для контейнера languages при наведенні */
+.column.languages:hover {
+  background-color: #1174ae; /* Колір фону при наведенні */
+  width: 760px; /* Ширина при наведенні */
+  height: 670px; /* Висота при наведенні */
+  z-index: 1; /* Підняти над іншими колонками */
+}
+
+/* Скидання правого відступу для останнього блоку */
+.column:last-child {
+  margin-right: 0;
+}
+
+/* Стилі для заголовка */
 .head2 {
+  margin-left: 104px;
   font-size: 50px;
   text-transform: uppercase;
   color: white;
   font-weight: 800;
 }
+
+/* Стилі для списку про */
 .about {
   display: flex;
   flex-direction: column;
   gap: 50px; /* Відступи між елементами h3 */
-  font-size: 30px;
+  font-size: 25px;
   color: white;
   font-weight: bold;
   position: relative;
 }
 
+/* Псевдоелемент для декору */
 .about::before {
   content: "";
-  position: absolute;
+  position: absolute; /* Псевдоелемент має бути розташований абсолютно відносно найближчого позиціонованого батьківського елемента */
   left: 0;
   top: -45px; /* Відстань від верхнього краю заголовка */
   width: 660px;
@@ -61,26 +120,26 @@ body {
   background-color: #ffffff;
 }
 
-/* Стилі для фону і позиціонування контейнера */
-.grey-color {
-  padding: 50px 136px 102px 140px; /* Відступи за годинниковою стрілкою: верх, праворуч, низ, ліворуч */
-  width: 2550px; /* Фіксована ширина контейнера */
-  height: 672px; /* Фіксована висота контейнера */
-  background-color: #2f3137; /* Фоновий колір */
-  box-sizing: border-box; /* Включає padding і border у загальні розміри */
-  overflow: hidden; /* Уникає прокрутки */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  justify-content: flex-start; 
-}
-
-.head2{
-  margin-left: 104px;
- 
-}
-
-/* Опційні стилі для відступів між елементами */
+/* Стилі для заголовків всередині .about */
 .about h3 {
   margin: 0; /* Щоб уникнути непотрібних відступів зовні */
+}
+.blue-rectangle {
+  width: 760px; /* Ширина прямокутника */
+  height: 100px; /* Висота прямокутника */
+  background-color: #1174ae; /* Синій колір */
+  margin-bottom: 34px; /* Відстань між синім прямокутником і наступним елементом */
+}
+
+.grey-color1 {
+  width: 760px; /* Фіксована ширина */
+  height: 672px; /* Висота контейнера */
+  background-color: #2f3137;
+  padding: 50px 136px 102px 140px;
+  margin-top: 135px; /* Розташування контейнера */
+}
+
+.container {
+  display: flex;
+  gap: 96px; /* Optional: Add spacing between the containers */
 }
