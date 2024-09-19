@@ -33,9 +33,11 @@ body {
 .main-content {
   margin-left: 735px;
   margin-top: 130px;
-}/* Основні стилі для контейнера grey-color */
+} /* Основні стилі для контейнера grey-color */
 .grey-color {
-  padding: 50px 136px 102px 140px;
+  // padding: 50px 136px 102px 140px;
+  padding-left: 35px;
+  padding-right: 135px;
   width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
   height: 672px; /* Висота контейнера */
   background-color: #2f3137;
@@ -44,20 +46,24 @@ body {
   align-items: flex-start;
   position: relative; /* Додаємо позицію відносно для можливого позиціонування */
   overflow: hidden; /* Сховати вихідний контент */
-
 }
 
-/* Стилі для колонок */
-.column {
-  position: relative;
-  transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Плавний перехід для кольору, ширини та висоти */
-  background-color: #2f3137; /* Початковий колір фону */
-}
+// /* Стилі для колонок */
+// .column {
+//   position: relative;
+//   transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Плавний перехід для кольору, ширини та висоти */
+//   background-color: #2f3137; /* Початковий колір фону */
+// }
 
 /* Встановлення початкових розмірів колонок */
-.column.skills, .column.hobbies, .column.languages {
+.column.skills,
+.column.hobbies,
+.column.languages {
   flex: 1;
-  height: 100%; /* Висота колонок відповідає висоті батьківського контейнера */
+  height: 100%;
+  width: 672px; /* Висота колонок відповідає висоті батьківського контейнера */
+  padding-left: 100px;
+  padding-top: 40px;
 }
 
 /* Зміна кольору і розміру для контейнера skills при наведенні */
@@ -65,7 +71,7 @@ body {
   background-color: #1174ae; /* Колір фону при наведенні */
   width: 760px; /* Ширина при наведенні */
   height: 670px; /* Висота при наведенні */
-  z-index: 1; /* Підняти над іншими колонками */
+  // z-index: 12; /* Підняти над іншими колонками */
 }
 
 /* Зміна кольору і розміру для контейнера hobbies при наведенні */
@@ -73,7 +79,7 @@ body {
   background-color: #1174ae; /* Колір фону при наведенні */
   width: 760px; /* Ширина при наведенні */
   height: 670px; /* Висота при наведенні */
-  z-index: 1; /* Підняти над іншими колонками */
+  // z-index: 3; /* Підняти над іншими колонками */
 }
 
 /* Зміна кольору і розміру для контейнера languages при наведенні */
@@ -81,13 +87,13 @@ body {
   background-color: #1174ae; /* Колір фону при наведенні */
   width: 760px; /* Ширина при наведенні */
   height: 670px; /* Висота при наведенні */
-  z-index: 1; /* Підняти над іншими колонками */
+  // z-index: 1; /* Підняти над іншими колонками */
 }
 
-/* Скидання правого відступу для останнього блоку */
-.column:last-child {
-  margin-right: 0;
-}
+// /* Скидання правого відступу для останнього блоку */
+// .column:last-child {
+//   margin-right: 0;
+// }
 
 /* Стилі для заголовка */
 .head2 {
@@ -103,7 +109,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 50px; /* Відступи між елементами h3 */
-  font-size: 25px;
+  font-size: 30px;
   color: white;
   font-weight: bold;
   position: relative;
@@ -124,12 +130,12 @@ body {
 .about h3 {
   margin: 0; /* Щоб уникнути непотрібних відступів зовні */
 }
-.blue-rectangle {
-  width: 760px; /* Ширина прямокутника */
-  height: 100px; /* Висота прямокутника */
-  background-color: #1174ae; /* Синій колір */
-  margin-bottom: 34px; /* Відстань між синім прямокутником і наступним елементом */
-}
+// .blue-rectangle {
+//   width: 760px; /* Ширина прямокутника */
+//   height: 100px; /* Висота прямокутника */
+//   background-color: #1174ae; /* Синій колір */
+//   margin-bottom: 34px; /* Відстань між синім прямокутником і наступним елементом */
+// }
 
 .grey-color1 {
   width: 760px; /* Фіксована ширина */
@@ -142,4 +148,7 @@ body {
 .container {
   display: flex;
   gap: 96px; /* Optional: Add spacing between the containers */
+}
+.about a {
+  color: #ffffff;
 }

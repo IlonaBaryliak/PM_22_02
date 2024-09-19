@@ -8,14 +8,19 @@ import rename from "gulp-rename";
 import browserSync from "browser-sync";
 import * as sass from "sass";
 import gulpSass from "gulp-sass";
+import fileInclude from 'gulp-file-include';
 
 const sassCompiler = gulpSass(sass);
 
 gulp.task("html", function () {
-  return gulp
-    .src("app/html/*.html")
+  return gulp.src("app/index.html")
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream());
+
 });
 
 gulp.task("scss", function () {
