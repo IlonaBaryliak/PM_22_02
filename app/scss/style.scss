@@ -2,6 +2,8 @@ body {
   width: 2550px;
   height: 3580px;
   font-family: "Raleway", sans-serif;
+
+  margin-bottom: 130px;
 }
 .name {
   font-size: 120px;
@@ -10,6 +12,7 @@ body {
   color: #2f3137;
   font-weight: 800;
   margin-bottom: 25px;
+  margin-top: 137px;
 }
 .work-now {
   margin-top: 0px;
@@ -23,19 +26,35 @@ body {
 .introduction {
   width: 820px;
   height: 255px;
-  font-size: 40px;
+  font-size: 45px;
   letter-spacing: 1px;
   line-height: 56px;
   color: #2f3137;
   text-align: left;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
+.years {
+  text-align: center;
+  width: 50px;
+  height: 250px;
+  padding-right: 10px;
+  margin-left: 135px;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  float: left;
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Raleway";
+  background-color: #1174ae;
+  display: block;
+}
+
 .main-content {
   margin-left: 735px;
   margin-top: 130px;
 } /* Основні стилі для контейнера grey-color */
 .grey-color {
-  // padding: 50px 136px 102px 140px;
   padding-left: 35px;
   padding-right: 135px;
   width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
@@ -43,51 +62,48 @@ body {
   background-color: #2f3137;
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   position: relative; /* Додаємо позицію відносно для можливого позиціонування */
   overflow: hidden; /* Сховати вихідний контент */
 }
 
-// /* Стилі для колонок */
-// .column {
-//   position: relative;
-//   transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Плавний перехід для кольору, ширини та висоти */
-//   background-color: #2f3137; /* Початковий колір фону */
-// }
-
-/* Встановлення початкових розмірів колонок */
-.column.skills,
-.column.hobbies,
-.column.languages {
+.column-skills,
+.column-hobbies,
+.column-languages,
+.column-references,
+.colomn-education {
   flex: 1;
-  height: 100%;
+  height: 672px;
   width: 672px; /* Висота колонок відповідає висоті батьківського контейнера */
   padding-left: 100px;
-  padding-top: 40px;
+  padding-top: 60px;
 }
-
+.colomn-education {
+  margin-top: 110px;
+}
 /* Зміна кольору і розміру для контейнера skills при наведенні */
-.column.skills:hover {
+.column-skills:hover {
   background-color: #1174ae; /* Колір фону при наведенні */
   width: 760px; /* Ширина при наведенні */
-  height: 670px; /* Висота при наведенні */
-  // z-index: 12; /* Підняти над іншими колонками */
+  height: 672px; /* Висота при наведенні */
+  z-index: 1; /* Підняти над іншими колонками */
 }
 
 /* Зміна кольору і розміру для контейнера hobbies при наведенні */
-.column.hobbies:hover {
+.column-hobbies:hover {
   background-color: #1174ae; /* Колір фону при наведенні */
   width: 760px; /* Ширина при наведенні */
-  height: 670px; /* Висота при наведенні */
-  // z-index: 3; /* Підняти над іншими колонками */
+  height: 672px; /* Висота при наведенні */
+  z-index: 1; /* Підняти над іншими колонками */
 }
 
 /* Зміна кольору і розміру для контейнера languages при наведенні */
-.column.languages:hover {
+.column-languages:hover {
   background-color: #1174ae; /* Колір фону при наведенні */
   width: 760px; /* Ширина при наведенні */
-  height: 670px; /* Висота при наведенні */
-  // z-index: 1; /* Підняти над іншими колонками */
+  height: 672px; /* Висота при наведенні */
+  z-index: 1; /* Підняти над іншими колонками */
 }
 
 // /* Скидання правого відступу для останнього блоку */
@@ -97,15 +113,34 @@ body {
 
 /* Стилі для заголовка */
 .head2 {
+  margin: 0 0 80px 0;
   margin-left: 104px;
-  font-size: 50px;
+  font-size: 60px;
   text-transform: uppercase;
   color: white;
   font-weight: 800;
 }
+.head2-1 {
+  margin: 0px 0px 100px 239px; // top right bottom left
+  font-size: 60px;
+  text-transform: uppercase;
+  color: #2f3137;
+  font-weight: 800;
+  position: relative;
+}
 
-/* Стилі для списку про */
-.about {
+.head2-1::before {
+  content: ""; /* Псевдоелемент без контенту */
+  position: absolute; /* Абсолютне позиціювання */
+  left: -104px; /* Вирівнювання зліва */
+  top: 72px; /* Відстань від нижньої частини заголовка (60px + 12px) */
+  width: 1420px; /* Ширина риски */
+  height: 4px; /* Висота риски */
+  background-color: #2f3137; /* Колір риски */
+}
+/* Стилі для списку */
+.about,
+.about-me {
   display: flex;
   flex-direction: column;
   gap: 50px; /* Відступи між елементами h3 */
@@ -114,22 +149,16 @@ body {
   font-weight: bold;
   position: relative;
 }
-
-/* Псевдоелемент для декору */
-.about::before {
-  content: "";
-  position: absolute; /* Псевдоелемент має бути розташований абсолютно відносно найближчого позиціонованого батьківського елемента */
-  left: 0;
-  top: -45px; /* Відстань від верхнього краю заголовка */
-  width: 660px;
-  height: 4px;
-  background-color: #ffffff;
+.about-me a {
+  font-size: 40px;
+  color: #ffffff;
 }
 
 /* Стилі для заголовків всередині .about */
 .about h3 {
   margin: 0; /* Щоб уникнути непотрібних відступів зовні */
 }
+
 // .blue-rectangle {
 //   width: 760px; /* Ширина прямокутника */
 //   height: 100px; /* Висота прямокутника */
@@ -138,17 +167,149 @@ body {
 // }
 
 .grey-color1 {
-  width: 760px; /* Фіксована ширина */
-  height: 672px; /* Висота контейнера */
+  height: 760px;
+  width: 694px;
   background-color: #2f3137;
-  padding: 50px 136px 102px 140px;
-  margin-top: 135px; /* Розташування контейнера */
+  padding-left: 100px;
+  padding-top: 40px;
+  margin-right: 136px;
+  margin-top: 135px;
+  transition: background-color 0.3s ease;
 }
 
+// .grey-color1:hover { //це анімація блоку з контактамми
+//   background-color: #1174ae; /* Синій колір при наведенні */
+// }
 .container {
   display: flex;
-  gap: 96px; /* Optional: Add spacing between the containers */
+  gap: 66px; /* Optional: Add spacing between the containers */
 }
-.about a {
+
+.job-section {
+  margin-top: 113px;
+  //margin-right: 100px;
+  margin-bottom: 130px;
+  //width: 100%;
+}
+.agency {
+  margin: 0px 0px 1px 239px;
+  color: #2f3137;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Raleway ";
+}
+.place-work {
+  margin: 0px 0px 22px 239px;
+  font-size: 34px;
+  color: #2f3137;
+  font-weight: 500;
+  font-style: italic;
+  font-family: "Raleway";
+}
+.position {
+  margin: 0px 0px 25px 239px;
+  font-size: 46px;
+  width: 100%;
+  text-transform: uppercase;
+  color: #2f3137; // Основний колір
+  font-weight: 800;
+  font-family: "Raleway";
+}
+
+.position-vert,
+.name1 {
+  @extend .position; // Використовуємо всі властивості з .position
+  margin: 0;
+  padding-top: 0px;
+  position: relative;
+  color: #ffffff; // Змінений колір
+}
+
+.job-descripion {
+  margin: 0 270px 0;
+  width: 1320px;
+  height: 180px;
+  font-size: 32px;
+  letter-spacing: 1px;
+  line-height: 52px;
+  color: #2f3137;
+  text-align: left;
+}
+.job {
+  margin-bottom: 85px;
+  width: 1555px;
+  margin-right: 66px;
+}
+.grey-color-vert {
+  padding-top: 45px;
+  //margin-left: 1654px; /* Відступ зліва */
+  height: 1930px; /* Висота контейнера */
+  width: 794px; /* Ширина контейнера */
+  background-color: #2f3137; /* Колір фону */
+}
+
+.job-and-rect {
+  // margin: 0px 150px 0px 0px ;
+  display: flex; /* Використання Flexbox для розміщення контейнерів поряд */
+}
+/* риска */
+.about::before,
+.about-me::before,
+.position-vert::before {
+  content: "";
+  position: absolute; /* Псевдоелемент має бути розташований абсолютно відносно найближчого позиціонованого батьківського елемента */
+  left: 0;
+  top: -75px; /* Відстань від верхнього краю заголовка */
+  width: 600px;
+  height: 4px;
+  background-color: #ffffff;
+}
+.pos {
+  margin: 0 0 20px;
+  font-size: 40px;
+  color: #1174ae;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Raleway";
+}
+.column-references a {
+  font-size: 40px;
   color: #ffffff;
+  font-family: "Raleway ";
+}
+.robert {
+  margin-top: 80px;
+}
+.contact-link {
+  display: block;
+  // margin-top: 27px;
+  margin-bottom: 28px;
+}
+.agency.uni {
+  @extend .agency;
+  margin-left: 104px;
+  color: #ffffff;
+}
+.position.uni {
+  @extend .position;
+  margin-left: 104px;
+  color: #ffffff;
+}
+.uni-description{
+  margin-left:104px;
+width: 458px;
+height: 228px;
+font-size: 32px;
+letter-spacing: 0px;
+line-height: 48px;
+color: #ffffff;
+font-family: "Raleway";
+text-align: left;
+}
+.first-uni{
+  margin-bottom: 80px;
+}
+.years.edu{
+  margin: 0;
 }
