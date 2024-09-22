@@ -173,7 +173,7 @@ body {
   padding-left: 100px;
   padding-top: 40px;
   margin-right: 136px;
-  margin-top: 135px;
+  margin-top: 50px;
   transition: background-color 0.3s ease;
 }
 
@@ -188,7 +188,7 @@ body {
 .job-section {
   margin-top: 113px;
   //margin-right: 100px;
-  margin-bottom: 130px;
+  margin-bottom: 70px;
   //width: 100%;
 }
 .agency {
@@ -244,7 +244,7 @@ body {
 .grey-color-vert {
   padding-top: 45px;
   //margin-left: 1654px; /* Відступ зліва */
-  height: 1930px; /* Висота контейнера */
+  height: 1970px; /* Висота контейнера */
   width: 794px; /* Ширина контейнера */
   background-color: #2f3137; /* Колір фону */
 }
@@ -296,20 +296,31 @@ body {
   margin-left: 104px;
   color: #ffffff;
 }
-.uni-description{
-  margin-left:104px;
-width: 458px;
-height: 228px;
-font-size: 32px;
-letter-spacing: 0px;
-line-height: 48px;
-color: #ffffff;
-font-family: "Raleway";
-text-align: left;
+.uni-description {
+  margin-left: 104px;
+  width: 458px;
+  height: 228px;
+  font-size: 32px;
+  letter-spacing: 0px;
+  line-height: 48px;
+  color: #ffffff;
+  font-family: "Raleway";
+  text-align: left;
 }
-.first-uni{
+.first-uni {
   margin-bottom: 80px;
 }
-.years.edu{
+.years.edu {
   margin: 0;
+}
+.rect-blue-footer {
+  height: 100px;
+  background-color: #1174ae;
+  margin-top: 50px;
+}
+.rect-blue-top {
+  width: 794px; /* Займає всю ширину */
+  height: 100px; /* Встановіть потрібну висоту */
+  background-color: #1174ae; /* Колір вашого прямокутника */
+  box-sizing: border-box; /* Включає padding в ширину */
 }
