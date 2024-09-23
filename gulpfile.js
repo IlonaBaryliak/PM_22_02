@@ -52,7 +52,7 @@ gulp.task("scripts", function () {
 
 gulp.task("imgs", function () {
   return gulp
-    .src("app/img/*.+(jpg|jpeg|png|gif)")
+    .src("app/images/*.+(jpg|jpeg|png|gif)", { encoding: false })
     .pipe(
       imagemin({
         progressive: true,

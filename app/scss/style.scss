@@ -1,6 +1,7 @@
-body {
+.page {
   width: 2550px;
   height: 3580px;
+
   font-family: "Raleway", sans-serif;
 
   margin-bottom: 130px;
@@ -52,7 +53,7 @@ body {
 
 .main-content {
   margin-left: 735px;
-  margin-top: 130px;
+  //margin-top: 130px;
 } /* Основні стилі для контейнера grey-color */
 .grey-color {
   padding-left: 35px;
