@@ -52,7 +52,7 @@
 }
 
 .main-content {
-  margin-left: 735px;
+  padding-left: 135px;
   //margin-top: 130px;
 } /* Основні стилі для контейнера grey-color */
 .grey-color {
@@ -324,4 +324,20 @@
   height: 100px; /* Встановіть потрібну висоту */
   background-color: #1174ae; /* Колір вашого прямокутника */
   box-sizing: border-box; /* Включає padding в ширину */
+}
+.photo {
+  width: 500px;
+  height: 600px;
+  margin: 140px 44px 106px 0px;
+  position: relative;
+  border: 20px solid #1174ae;
+}
+.photo::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border: 2px solid grey; /* Внутрішня рамка (сіра) */
 }
