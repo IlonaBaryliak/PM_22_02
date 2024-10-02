@@ -10,18 +10,26 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="/css/style.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Підключення EasyPieChart -->
+    <!-- <script src="/js/jquery.easypiechart.min.js" rel="stylesheet"></script> -->
   </head>
   <body>
     <div class="page">
-
       <!-- name,information, blue rect, grey rect with contact -->
-    @@include('head.html')
-    <!-- grey rect with skills,hobbies,languages -->
-    @@include('horizontal-rect.html')
-    <!-- job experience, references, education, blue rectangle -->
-    @@include('mainpart.html') 
+      @@include('head.html')
+      <!-- grey rect with skills,hobbies,languages -->
+      @@include('horizontal-rect.html')
+      <!-- job experience, references, education, blue rectangle -->
+      @@include('mainpart.html')
     </div>
-   
   </body>
 </html>

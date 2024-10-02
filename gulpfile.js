@@ -76,5 +76,26 @@ gulp.task("watch", function () {
   gulp.watch("app/scss/*.scss", gulp.series("scss"));
   gulp.watch("app/img/*.+(jpg|jpeg|png|gif)", gulp.series("imgs"));
 });
-
-gulp.task("default", gulp.series("html", "scss", "scripts", "imgs", "watch"));
+gulp.task("copy-bootstrap", function () {
+  return gulp
+    .src([
+      "node_modules/bootstrap/dist/css/bootstrap.min.css",
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+    ])
+    .pipe(gulp.dest("dist/css")); // Зберігаємо CSS
+});
+gulp.task(
+  "default",
+  gulp.series("html", "scss", "scripts", "imgs", "copy-bootstrap", "watch")
+);
+gulp.task("bootstrap", function () {
+  return gulp
+    .src(
+      [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+      ],
+      { base: "node_modules/bootstrap/dist" }
+    ) // базовий шлях для коректного збереження в dist
+    .pipe(gulp.dest("dist")); // Копіювання у dist
+});
