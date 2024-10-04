@@ -1,20 +1,33 @@
 .page {
   width: 100%;
+  // margin-top: 0%;
   height: auto;
   font-family: "Raleway", sans-serif;
-  margin-bottom: 130px;
+  //margin-bottom: 130px;
+  overflow-x: hidden;
+}
+
+.col-7 {
+  flex: 0 0 auto;
+  width: 62.4%;
+}
+.col-5 {
+  flex: 0 0 auto;
+  width: 37.6%;
+  //height: 100vh;
 }
 .name {
-  font-size: 5vw;
-  line-height: 4rem;
+  font-size: 5.33vw;
+  line-height: 5.33vw;
   text-transform: uppercase;
   color: #2f3137;
   font-weight: 800;
-  margin-top: 9%;
+  margin-top: 10%;
   margin-bottom: 0.5rem;
 }
 .work-now {
   font-size: 1.87vw;
+  letter-spacing: 0.5dvh;
   //letter-spacing: 4px;
   color: #1174ae;
   font-weight: 300;
@@ -28,23 +41,29 @@
   line-height: 1.75rem;
   color: #2f3137;
   text-align: left;
-  width: 90%; /* Адаптивна ширина */
+  width: 100%; /* Адаптивна ширина */
 }
+.years-color {
+  float: left;
+  width: 1.5rem;
+  height: 8.5rem;
+  background-color: #1174ae;
+  display: flex; /* Додаємо flexbox */
+  flex-direction: column; /* Розміщуємо по вертикалі */
+  justify-content: center; /* Центруємо по вертикалі */
+  align-items: center; /* Центруємо по горизонталі */
+}
+
 .years {
   text-align: center;
-  width: 50px;
-  height: 250px;
-  padding-right: 10px;
-  margin-left: 135px;
-  writing-mode: tb-rl;
-  transform: rotate(-180deg);
-  float: left;
-  font-size: 30px;
+  margin: 0; /* Змінюємо відступи */
+  writing-mode: tb-rl; /* Вертикальне написання */
+  transform: rotate(-180deg); /* Поворот тексту */
+  font-size: 1rem;
   color: #ffffff;
   font-weight: bold;
   font-family: "Raleway";
-  background-color: #1174ae;
-  display: block;
+  display: block; /* Можна залишити, якщо потрібно */
 }
 
 // .main-content {
@@ -52,60 +71,80 @@
 //   //margin-top: 130px;
 // } /* Основні стилі для контейнера grey-color */
 .grey-color {
-  padding-left: 35px;
-  padding-right: 135px;
+  //padding-left: 1.09rem;
+  padding-right: 4rem;
   width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
-  height: 672px; /* Висота контейнера */
+  height: 23rem; /* Висота контейнера */
   background-color: #2f3137;
   box-sizing: border-box;
-  display: flex;
+
   flex-direction: row;
   align-items: flex-start;
   position: relative; /* Додаємо позицію відносно для можливого позиціонування */
   overflow: hidden; /* Сховати вихідний контент */
 }
 
-.column-skills,
-.column-hobbies,
-.column-languages,
-.column-references,
+// .column-skills,
+// .column-hobbies,
+// .column-languages,
+// .column-references,
+// .colomn-education {
+//   flex: 1;
+//   height: 23rem;
+//   width: 25rem; /* Висота колонок відповідає висоті батьківського контейнера */
+//   // padding-left: 3rem;
+//   // padding-top: 2rem;
+// }
 .colomn-education {
-  flex: 1;
-  height: 772px;
-  width: 672px; /* Висота колонок відповідає висоті батьківського контейнера */
-  padding-left: 100px;
-  padding-top: 60px;
-}
-.colomn-education {
-  margin-top: 110px;
+  margin-top: 3rem;
 }
 /* Зміна кольору і розміру для контейнера skills при наведенні */
-.column-skills:hover {
-  background-color: #1174ae; /* Колір фону при наведенні */
-  width: 760px; /* Ширина при наведенні */
-  height: 672px; /* Висота при наведенні */
-  z-index: 1; /* Підняти над іншими колонками */
+// .column-skills:hover ,
+// .column-hobbies:hover,
+// .column-languages:hover,
+//  .icon-container1:hover {
+//    transition: background-color 0.3s ease;
+//   background-color: #1174ae; /* Колір фону при наведенні */
+//   height: 100vh;
+//   // width: 25rem;
+//   // margin-left: 0.5rem;
+//   z-index: 1; /* Підняти над іншими колонками */
+//   .icon-container1:hover{
+//   background-color: #2f3137;
+//   height: auto;
+// }
+// }
+.column-skills,
+.column-hobbies,
+.column-languages {
+  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
 }
 
-/* Зміна кольору і розміру для контейнера hobbies при наведенні */
-.column-hobbies:hover {
-  background-color: #1174ae; /* Колір фону при наведенні */
-  width: 760px; /* Ширина при наведенні */
-  height: 672px; /* Висота при наведенні */
-  z-index: 1; /* Підняти над іншими колонками */
-}
-
-/* Зміна кольору і розміру для контейнера languages при наведенні */
+.column-skills:hover,
+.column-hobbies:hover,
 .column-languages:hover {
-  background-color: #1174ae; /* Колір фону при наведенні */
-  width: 760px; /* Ширина при наведенні */
-  height: 672px; /* Висота при наведенні */
-  z-index: 1; /* Підняти над іншими колонками */
+  background-color: #1174ae;
+  height: 100vh; /* Колір фону колонки при наведенні */
 }
 
+.column-skills:hover .icon-container1,
+.column-hobbies:hover .icon-container1,
+.column-languages:hover .icon-container1 {
+  background-color: #2f3137; /* Колір фону іконки при наведенні */
+}
+
+/* Зміна кольору іконки при наведенні */
+.column-skills:hover .icon-container1 i,
+.column-hobbies:hover .icon-container1 i,
+.column-languages:hover .icon-container1 i {
+  color: white; /* Змінити колір іконки, якщо потрібно */
+}
+// .icon-container1:hover{
+//   background-color: #2f3137;
+// }
 /* Стилі для заголовка */
 .head2 {
-  margin: 3rem 0 0rem 6rem;
+  margin: 3rem 0 0rem 8rem;
 
   font-size: 2.5vw;
   text-transform: uppercase;
@@ -113,23 +152,14 @@
   font-weight: 800;
 }
 .head2-1 {
-  margin: 0px 0px 100px 239px; // top right bottom left
+  margin: 0rem 0rem 0rem 3rem;
+  // top right bottom left
   font-size: 2.5vw;
   text-transform: uppercase;
   color: #2f3137;
   font-weight: 800;
-  position: relative;
 }
 
-.head2-1::before {
-  content: ""; /* Псевдоелемент без контенту */
-  position: absolute; /* Абсолютне позиціювання */
-  left: -3.25rem; /* Вирівнювання зліва */
-  top: 2.25rem; /* Відстань від нижньої частини заголовка (60px + 12px) */
-  width: 1420px; /* Ширина риски */
-  height: 4px; /* Висота риски */
-  background-color: #2f3137; /* Колір риски */
-}
 /* Стилі для списку */
 
 .about-me {
@@ -141,10 +171,12 @@
   font-weight: bold;
   position: relative;
   margin-left: 3.5rem;
+  padding-bottom: 3rem;
 }
 .about {
   @extend .about-me;
-  gap: 1.6rem;
+
+  gap: 1.5rem;
 }
 .about-me a {
   margin-inline-start: 0.5rem;
@@ -155,199 +187,195 @@
   // margin-bottom: 1.3rem;
 }
 
-.bi-telephone-fill,
-.bi-globe,
-.bi-geo-alt-fill {
-  font-size: 1.2rem;
+// .bi-telephone-fill,
+// .bi-globe,
+// .bi-geo-alt-fill,
+// .bi-pie-chart-fill,
+// .bi-flag,
+// .bi-globe-asia-australia {
+//   font-size: 1.2rem;
+// }
+// .bi-person-fill {
+//   font-size: 2.7rem;
+// }
+.bi {
+  font-size: 1.3rem;
 }
-.bi-person-fill {
-  font-size: 1.7rem;
-}
-.icon-container {
+.icon-container,
+.icon-container1 {
   width: 2rem;
   height: 2rem;
   justify-content: center; /* Центрує горизонтально */
   align-items: center;
-
   margin: 3rem 0 0 3.5rem;
   display: flex;
   background-color: #1174ae;
 }
-.icon-container1 {
+
+.icon-container2 {
   @extend .icon-container;
   margin: 0;
 }
 .intro {
   padding-left: 2rem;
+  //margin-right: 5rem;
 }
 /* Стилі для заголовків всередині .about */
 .about h3 {
+  font-weight: 700;
+  font-size: 1rem;
   margin: 0; /* Щоб уникнути непотрібних відступів зовні */
 }
 
 .blue-rect {
-  width: 24rem; /* Ширина прямокутника */
+  //width: 25rem; /* Ширина прямокутника */
   height: 3rem; /* Висота прямокутника */
   background-color: #1174ae; /* Синій колір */
-  margin-bottom: 1rem; /* Відстань між синім прямокутником і наступним елементом */
+  margin-bottom: 1.5rem; /* Відстань між синім прямокутником і наступним елементом */
 }
-
+.blue-and-grey-rect {
+  /* margin-right: 4rem; */
+  width: 88.6%;
+}
 .grey-color1 {
-  //margin-top: 3.75rem;
-  height: 21rem; /* висота 76% від висоти вікна сторінки */
-  width: 24rem; /* ширина 69.4% від ширини сторінки */
+  // margin-left: 3rem;
+  // height: 23rem; /* висота 76% від висоти вікна сторінки */
+  // width: 25rem; /* ширина 69.4% від ширини сторінки */
+
+  // height: 108vh;
+  // width: 89.6%;
+      //box-sizing: border-box;
+  //position: relative;
+  //height: 23rem;
   background-color: #2f3137;
+  // margin-right: 4rem;
 }
 
 // .grey-color1:hover { //це анімація блоку з контактамми
 //   background-color: #1174ae; /* Синій колір при наведенні */
 // }
-.container {
-  display: flex;
-  margin-left: 0;
-  // gap: 66px; /* Optional: Add spacing between the containers */
+.job-experience {
+  margin-left: 3.5rem;
 }
-
 .job-section {
-  margin-top: 113px;
-  //margin-right: 100px;
-  margin-bottom: 70px;
-  //width: 100%;
+  margin-top: 3.5rem;
+  // margin-bottom: 2rem;
 }
 .agency {
-  margin: 0px 0px 1px 239px;
+  margin: 0 0 0 3rem;
   color: #2f3137;
-  font-size: 40px;
+  font-size: 2vw;
   font-weight: bold;
   font-style: italic;
-  font-family: "Raleway ";
 }
 .place-work {
-  margin: 0px 0px 22px 239px;
-  font-size: 34px;
+  margin: 0 0 0 3rem;
+  font-size: 1.7vw;
   color: #2f3137;
   font-weight: 500;
   font-style: italic;
   font-family: "Raleway";
 }
 .position {
-  margin: 0px 0px 25px 239px;
-  font-size: 46px;
-  width: 100%;
+  margin: 0 0 0 3rem;
+  font-size: 2vw;
+  /// width: 100%;
   text-transform: uppercase;
   color: #2f3137; // Основний колір
   font-weight: 800;
-  font-family: "Raleway";
 }
 
-.position-vert,
 .name1 {
   @extend .position; // Використовуємо всі властивості з .position
   margin: 0;
-  padding-top: 0px;
+  padding-top: 0;
   position: relative;
   color: #ffffff; // Змінений колір
 }
 
 .job-descripion {
-  margin: 0 270px 0;
-  width: 1320px;
-  height: 180px;
-  font-size: 32px;
-  letter-spacing: 1px;
-  line-height: 52px;
+  margin: 1rem 1rem 3rem 3rem;
+  font-size: 1rem;
   color: #2f3137;
   text-align: left;
 }
-.job {
-  margin-bottom: 85px;
-  width: 1555px;
-  margin-right: 66px;
-}
 .grey-color-vert {
-  padding-top: 45px;
-  //margin-left: 1654px; /* Відступ зліва */
-  height: 1970px; /* Висота контейнера */
-  width: 794px; /* Ширина контейнера */
+  padding-top: 0.5rem;
+  padding-bottom: 3.5rem;
   background-color: #2f3137; /* Колір фону */
 }
 
-.job-and-rect {
-  // margin: 0px 150px 0px 0px ;
-  display: flex; /* Використання Flexbox для розміщення контейнерів поряд */
-}
 /* риска */
-.about::before,
-.line,
-.position-vert::before {
+.grey-and-blue-rect {
+  width: 88.6%;
+}
+.line {
   content: "";
-  //position: absolute; /* Псевдоелемент має бути розташований абсолютно відносно найближчого позиціонованого батьківського елемента */
   left: 0;
   top: -10rem; /* Відстань від верхнього краю заголовка */
   width: 18.75rem;
-  //margin-bottom: 3rem;
   height: 0.2rem;
   margin: -0.2rem 0rem 2rem 3.5rem;
   background-color: #ffffff;
 }
+.line-long {
+  @extend.line;
+  background-color: #2f3137;
+  width: 95%;
+  margin: -0.2rem 0rem 3rem 0rem;
+}
 .pos {
-  margin: 0 0 20px;
-  font-size: 40px;
+  margin: 0 0 0.5rem;
+  //letter-spacing: 0.1rem;
+  font-size: 1.4rem;
   color: #1174ae;
   font-weight: bold;
   font-style: italic;
   font-family: "Raleway";
 }
-.column-references a {
-  font-size: 40px;
-  color: #ffffff;
-  font-family: "Raleway ";
-}
+.darwin,
 .robert {
-  margin-top: 80px;
+  margin: 2.3rem 0 0 3.5rem;
+
+  .robert {
+    margin: 2rem 0 0 3.5rem;
+  }
+  a {
+    // margin-inline-start: .5rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+  }
 }
-.contact-link {
-  display: block;
-  // margin-top: 27px;
-  margin-bottom: 28px;
-}
-.agency.uni {
+
+.agency-uni {
   @extend .agency;
-  margin-left: 104px;
+  margin: 0 0 0 8rem;
+
   color: #ffffff;
 }
-.position.uni {
+.position-uni {
   @extend .position;
-  margin-left: 104px;
+  margin: 0 0 0 8rem;
   color: #ffffff;
 }
 .uni-description {
-  margin-left: 104px;
-  width: 458px;
-  height: 228px;
-  font-size: 32px;
-  letter-spacing: 0px;
-  line-height: 48px;
-  color: #ffffff;
-  font-family: "Raleway";
+  margin: 0.6rem 2.2rem 0 8rem;
+  font-size: 1.2rem;
+  color: #fff;
   text-align: left;
 }
-.first-uni {
-  margin-bottom: 80px;
-}
-.years.edu {
-  margin: 0;
+.position-vert {
+  margin-left: 3.5rem;
 }
 .rect-blue-footer {
-  height: 100px;
+  height: 3rem;
   background-color: #1174ae;
-  margin-top: 50px;
+  margin-top: 1.5rem;
 }
-.rect-blue-top {
-  width: 794px; /* Займає всю ширину */
-  height: 100px; /* Встановіть потрібну висоту */
-  background-color: #1174ae; /* Колір вашого прямокутника */
-  box-sizing: border-box; /* Включає padding в ширину */
+.first-uni {
+  margin-bottom: 3rem;
 }
 // .photo {
 //   width: 15rem;
@@ -361,9 +389,10 @@
 .photo {
   width: 15rem;
   height: 19rem;
+  //object-fit: cover;
   // max-width: 200px;
   border: 10px solid #1174ae;
-  margin: 3rem 1rem 3rem 2rem;
+  margin: 3rem 1rem 4rem 5rem;
 }
 // .photo::before {
 //   content: "";
@@ -375,49 +404,49 @@
 //   border: 2px solid grey; /* Внутрішня рамка (сіра) */
 // }
 
-@media (max-width: 768px) {
-  /* Планшети */
-  .name {
-    font-size: 4rem;
-    line-height: 5rem;
-  }
-  .work-now {
-    font-size: 1.4rem;
-  }
-}
+// @media (max-width: 768px) {
+//   /* Планшети */
+//   .name {
+//     font-size: 3rem;
+//     line-height: 3rem;
+//   }
+//   .work-now {
+//     font-size: 1.4rem;
+//   }
+// }
 
-@media (max-width: 600px) {
-  /* Маленькі планшети */
-  .name {
-    font-size: 3.5rem; /* Трохи зменшуємо для компактності */
-    line-height: 4.5rem;
-  }
-  .work-now {
-    font-size: 1.3rem;
-  }
-}
+// @media (max-width: 600px) {
+//   /* Маленькі планшети */
+//   .name {
+//     font-size: 3.5rem; /* Трохи зменшуємо для компактності */
+//     line-height: 4.5rem;
+//   }
+//   .work-now {
+//     font-size: 1.3rem;
+//   }
+// }
 
-@media (max-width: 480px) {
-  /* Мобільні пристрої */
-  .name {
-    font-size: 3rem;
-    line-height: 4rem;
-  }
-  .work-now {
-    font-size: 1.2rem; /* Менший шрифт для маленьких екранів */
-  }
-}
+// @media (max-width: 480px) {
+//   /* Мобільні пристрої */
+//   .name {
+//     font-size: 3rem;
+//     line-height: 4rem;
+//   }
+//   .work-now {
+//     font-size: 1.2rem; /* Менший шрифт для маленьких екранів */
+//   }
+// }
 
-@media (max-width: 320px) {
-  /* Дуже маленькі мобільні пристрої */
-  .name {
-    font-size: 2.5rem; /* Зменшити ще більше */
-    line-height: 3rem;
-  }
-  .work-now {
-    font-size: 1rem; /* Адаптивний шрифт */
-  }
-}
+// @media (max-width: 320px) {
+//   /* Дуже маленькі мобільні пристрої */
+//   .name {
+//     font-size: 2.5rem; /* Зменшити ще більше */
+//     line-height: 3rem;
+//   }
+//   .work-now {
+//     font-size: 1rem; /* Адаптивний шрифт */
+//   }
+// }
 @media (max-width: 1024px) {
   /* Десктопи */
   .name {
@@ -427,4 +456,9 @@
   .work-now {
     font-size: 1.6rem; /* Збільшити шрифт для кращої читабельності */
   }
+}
+
+.page {
+  max-width: 1920px;
+  margin: 0 auto;
 }
