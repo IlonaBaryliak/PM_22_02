@@ -14,3 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }, index * 300); // Затримка для кожного елемента
   });
 });
+ document.addEventListener("DOMContentLoaded", function () {
+   const progressBars = document.querySelectorAll(".progress");
+   progressBars.forEach((progressBar) => {
+     const width = progressBar.style.width; // Отримуємо задану ширину
+     progressBar.style.width = "0"; // Задаємо початкову ширину 0
+     setTimeout(() => {
+       progressBar.style.width = width; // Відновлюємо ширину для анімації
+     }, 100); // Затримка для початку анімації
+   });
+ });
+   

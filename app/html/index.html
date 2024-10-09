@@ -12,15 +12,12 @@
     />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
     <link href="/css/style.min.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!-- Підключення EasyPieChart -->
-    <!-- <script src="/js/jquery.easypiechart.min.js" rel="stylesheet"></script> -->
   </head>
   <body>
     <div class="page">
@@ -30,20 +27,7 @@
       @@include('horizontal-rect.html')
       <!-- job experience, references, education, blue rectangle -->
       @@include('mainpart.html')
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     </div>
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const progressBars = document.querySelectorAll('.progress');
-    progressBars.forEach(progressBar => {
-      const width = progressBar.style.width; // Отримуємо задану ширину
-      progressBar.style.width = '0'; // Задаємо початкову ширину 0
-      setTimeout(() => {
-        progressBar.style.width = width; // Відновлюємо ширину для анімації
-      }, 100); // Затримка для початку анімації
-    });
-  });
-</script>
+    <script src="/js/scripts.min.js" rel="stylesheet"></script>
   </body>
 </html>
