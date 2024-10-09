@@ -74,7 +74,7 @@
   //padding-left: 1.09rem;
   padding-right: 4rem;
   width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
-  height: 23rem; /* Висота контейнера */
+  //height: 23rem; /* Висота контейнера */
   background-color: #2f3137;
   box-sizing: border-box;
 
@@ -83,6 +83,21 @@
   position: relative; /* Додаємо позицію відносно для можливого позиціонування */
   overflow: hidden; /* Сховати вихідний контент */
 }
+// .bar {
+//   height: 0.625rem; /* 10px = 0.625rem */
+//   background-color: #444;
+//   border-radius: 0.3125rem; /* 5px = 0.3125rem */
+//   margin-top: 0.3125rem; /* 5px = 0.3125rem */
+//   width: 100%;
+//   overflow: hidden;
+// }
+
+// .fill {
+//   height: 100%;
+//   background-color: #2196F3;
+//   width: 0;
+//   transition: width 1.5s ease;
+// }
 
 // .column-skills,
 // .column-hobbies,
@@ -95,9 +110,9 @@
 //   // padding-left: 3rem;
 //   // padding-top: 2rem;
 // }
-.colomn-education {
-  margin-top: 3rem;
-}
+// .colomn-education {
+//   margin-top: 3rem;
+// }
 /* Зміна кольору і розміру для контейнера skills при наведенні */
 // .column-skills:hover ,
 // .column-hobbies:hover,
@@ -114,31 +129,7 @@
 //   height: auto;
 // }
 // }
-.column-skills,
-.column-hobbies,
-.column-languages {
-  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
-}
 
-.column-skills:hover,
-.column-hobbies:hover,
-.column-languages:hover {
-  background-color: #1174ae;
-  height: 100vh; /* Колір фону колонки при наведенні */
-}
-
-.column-skills:hover .icon-container1,
-.column-hobbies:hover .icon-container1,
-.column-languages:hover .icon-container1 {
-  background-color: #2f3137; /* Колір фону іконки при наведенні */
-}
-
-/* Зміна кольору іконки при наведенні */
-.column-skills:hover .icon-container1 i,
-.column-hobbies:hover .icon-container1 i,
-.column-languages:hover .icon-container1 i {
-  color: white; /* Змінити колір іконки, якщо потрібно */
-}
 // .icon-container1:hover{
 //   background-color: #2f3137;
 // }
@@ -161,11 +152,10 @@
 }
 
 /* Стилі для списку */
-
 .about-me {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Відступи між елементами h3 */
+  gap: 1rem;
   font-size: 2.5rem;
   color: white;
   font-weight: bold;
@@ -175,9 +165,53 @@
 }
 .about {
   @extend .about-me;
-
   gap: 1.5rem;
+
+  .skill {
+    display: flex;
+    align-items: center;
+    padding-right: 1.3rem;
+
+    h3 {
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin: 0;
+      color: white;
+      width: 10rem;
+    }
+
+    .progress-bar {
+      flex-grow: 1;
+      background-color: #45464b;
+      position: relative;
+      height: 6px;
+      overflow: visible;
+      .progress {
+        width: 0; /* Початкова ширина 0 для анімації */
+        position: relative;
+        height: 100%; /* Висота прогрес-індикатора */
+        background-color: #1174ae;
+        border-radius: 0;
+        overflow: visible;
+        transition: width 2s ease-in-out, background-color 0.5s ease; /* Об'єднано transition */
+      }
+    }
+  }
+
+  .progress::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0; /* Розміщує квадрат справа */
+    transform: translate(50%, -50%); /* Центрує по вертикалі */
+    width: 10px; /* Ширина квадрата */
+    height: 10px; /* Змінити на бажану висоту квадрата */
+    background-color: #1174ae; /* Колір квадрата */
+    border-radius: 0; /* Це робить його квадратним */
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
 }
+
 .about-me a {
   margin-inline-start: 0.5rem;
   font-size: 1.2rem;
@@ -186,7 +220,54 @@
   color: #ffffff;
   // margin-bottom: 1.3rem;
 }
+.column-skills,
+.column-hobbies,
+.column-languages {
+  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+}
 
+.column-skills:hover,
+.column-hobbies:hover,
+.column-languages:hover {
+  background-color: #1174ae;
+  height: 100%; /* Колір фону колонки при наведенні */
+}
+
+.column-skills:hover .icon-container1,
+.column-hobbies:hover .icon-container1,
+.column-languages:hover .icon-container1 {
+  background-color: #2f3137; 
+    transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+/* Колір фону іконки при наведенні */
+}
+
+/* Зміна кольору іконки при наведенні */
+.column-skills:hover .icon-container1 i,
+.column-hobbies:hover .icon-container1 i,
+.column-languages:hover .icon-container1 i {
+  color: white; /* Змінити колір іконки, якщо потрібно */
+}
+
+/* Зміна кольору прогрес-бару при наведенні */
+.column-skills:hover .progress,
+.column-hobbies:hover .progress,
+.column-languages:hover .progress {
+  background-color: #2f3137 !important; 
+    transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+/* Колір прогресу при наведенні */
+}
+.column-skills:hover .progress-bar,
+.column-hobbies:hover .progress-bar,
+.column-languages:hover .progress-bar {
+  background-color: #218ece !important; 
+    transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+/* Колір прогресу при наведенні */
+}
+.column-skills:hover .progress::after,
+.column-hobbies:hover .progress::after,
+.column-languages:hover .progress::after {
+  background-color: #2f3137; /* Колір квадрата при наведенні */
+}
 // .bi-telephone-fill,
 // .bi-globe,
 // .bi-geo-alt-fill,
@@ -244,7 +325,7 @@
 
   // height: 108vh;
   // width: 89.6%;
-      //box-sizing: border-box;
+  //box-sizing: border-box;
   //position: relative;
   //height: 23rem;
   background-color: #2f3137;
@@ -349,19 +430,15 @@
   }
 }
 
-.agency-uni {
+.agency-uni,
+.position-uni {
   @extend .agency;
-  margin: 0 0 0 8rem;
+  margin: 0 0 0 7rem;
 
   color: #ffffff;
 }
-.position-uni {
-  @extend .position;
-  margin: 0 0 0 8rem;
-  color: #ffffff;
-}
 .uni-description {
-  margin: 0.6rem 2.2rem 0 8rem;
+  margin: 0.6rem 2.2rem 0 7rem;
   font-size: 1.2rem;
   color: #fff;
   text-align: left;
