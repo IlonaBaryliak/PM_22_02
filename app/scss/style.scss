@@ -65,16 +65,9 @@
   font-family: "Raleway";
   display: block; /* Можна залишити, якщо потрібно */
 }
-
-// .main-content {
-//   padding-left: 135px;
-//   //margin-top: 130px;
-// } /* Основні стилі для контейнера grey-color */
 .grey-color {
-  //padding-left: 1.09rem;
   padding-right: 4rem;
   width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
-  //height: 23rem; /* Висота контейнера */
   background-color: #2f3137;
   box-sizing: border-box;
 
@@ -83,56 +76,6 @@
   position: relative; /* Додаємо позицію відносно для можливого позиціонування */
   overflow: hidden; /* Сховати вихідний контент */
 }
-// .bar {
-//   height: 0.625rem; /* 10px = 0.625rem */
-//   background-color: #444;
-//   border-radius: 0.3125rem; /* 5px = 0.3125rem */
-//   margin-top: 0.3125rem; /* 5px = 0.3125rem */
-//   width: 100%;
-//   overflow: hidden;
-// }
-
-// .fill {
-//   height: 100%;
-//   background-color: #2196F3;
-//   width: 0;
-//   transition: width 1.5s ease;
-// }
-
-// .column-skills,
-// .column-hobbies,
-// .column-languages,
-// .column-references,
-// .colomn-education {
-//   flex: 1;
-//   height: 23rem;
-//   width: 25rem; /* Висота колонок відповідає висоті батьківського контейнера */
-//   // padding-left: 3rem;
-//   // padding-top: 2rem;
-// }
-// .colomn-education {
-//   margin-top: 3rem;
-// }
-/* Зміна кольору і розміру для контейнера skills при наведенні */
-// .column-skills:hover ,
-// .column-hobbies:hover,
-// .column-languages:hover,
-//  .icon-container1:hover {
-//    transition: background-color 0.3s ease;
-//   background-color: #1174ae; /* Колір фону при наведенні */
-//   height: 100vh;
-//   // width: 25rem;
-//   // margin-left: 0.5rem;
-//   z-index: 1; /* Підняти над іншими колонками */
-//   .icon-container1:hover{
-//   background-color: #2f3137;
-//   height: auto;
-// }
-// }
-
-// .icon-container1:hover{
-//   background-color: #2f3137;
-// }
 /* Стилі для заголовка */
 .head2 {
   margin: 3rem 0 0rem 8rem;
@@ -144,7 +87,6 @@
 }
 .head2-1 {
   margin: 0rem 0rem 0rem 3rem;
-  // top right bottom left
   font-size: 2.5vw;
   text-transform: uppercase;
   color: #2f3137;
@@ -162,6 +104,8 @@
   position: relative;
   margin-left: 3.5rem;
   padding-bottom: 3rem;
+  //flex-grow: 1;
+  min-height: 40vh;
 }
 .about {
   @extend .about-me;
@@ -208,7 +152,6 @@
     height: 10px; /* Змінити на бажану висоту квадрата */
     background-color: #1174ae; /* Колір квадрата */
     border-radius: 0; /* Це робить його квадратним */
-    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -218,7 +161,6 @@
   font-weight: 300;
   text-decoration: none;
   color: #ffffff;
-  // margin-bottom: 1.3rem;
 }
 .column-skills,
 .column-hobbies,
@@ -236,9 +178,9 @@
 .column-skills:hover .icon-container1,
 .column-hobbies:hover .icon-container1,
 .column-languages:hover .icon-container1 {
-  background-color: #2f3137; 
-    transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
-/* Колір фону іконки при наведенні */
+  background-color: #2f3137;
+  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+  /* Колір фону іконки при наведенні */
 }
 
 /* Зміна кольору іконки при наведенні */
@@ -252,33 +194,22 @@
 .column-skills:hover .progress,
 .column-hobbies:hover .progress,
 .column-languages:hover .progress {
-  background-color: #2f3137 !important; 
-    transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
-/* Колір прогресу при наведенні */
+  background-color: #2f3137 !important;
+  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+  /* Колір прогресу при наведенні */
 }
 .column-skills:hover .progress-bar,
 .column-hobbies:hover .progress-bar,
 .column-languages:hover .progress-bar {
-  background-color: #218ece !important; 
-    transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
-/* Колір прогресу при наведенні */
+  background-color: #218ece !important;
+  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+  /* Колір прогресу при наведенні */
 }
 .column-skills:hover .progress::after,
 .column-hobbies:hover .progress::after,
 .column-languages:hover .progress::after {
   background-color: #2f3137; /* Колір квадрата при наведенні */
 }
-// .bi-telephone-fill,
-// .bi-globe,
-// .bi-geo-alt-fill,
-// .bi-pie-chart-fill,
-// .bi-flag,
-// .bi-globe-asia-australia {
-//   font-size: 1.2rem;
-// }
-// .bi-person-fill {
-//   font-size: 2.7rem;
-// }
 .bi {
   font-size: 1.3rem;
 }
@@ -319,28 +250,17 @@
   width: 88.6%;
 }
 .grey-color1 {
-  // margin-left: 3rem;
-  // height: 23rem; /* висота 76% від висоти вікна сторінки */
-  // width: 25rem; /* ширина 69.4% від ширини сторінки */
-
-  // height: 108vh;
-  // width: 89.6%;
-  //box-sizing: border-box;
-  //position: relative;
-  //height: 23rem;
+ 
   background-color: #2f3137;
-  // margin-right: 4rem;
+ 
 }
 
-// .grey-color1:hover { //це анімація блоку з контактамми
-//   background-color: #1174ae; /* Синій колір при наведенні */
-// }
+
 .job-experience {
   margin-left: 3.5rem;
 }
 .job-section {
   margin-top: 3.5rem;
-  // margin-bottom: 2rem;
 }
 .agency {
   margin: 0 0 0 3rem;
@@ -360,7 +280,6 @@
 .position {
   margin: 0 0 0 3rem;
   font-size: 2vw;
-  /// width: 100%;
   text-transform: uppercase;
   color: #2f3137; // Основний колір
   font-weight: 800;
@@ -405,9 +324,18 @@
   width: 95%;
   margin: -0.2rem 0rem 3rem 0rem;
 }
+.vert-line-plus{
+display: flex;
+}
+.vert-line {
+  width: 0.1rem; /* Ширина лінії */
+  height: 10.4rem; /* Висота лінії */
+  background-color: #ffffff; /* Колір лінії (можете змінити на бажаний) */
+  margin-left:3.5rem ;
+}
+
 .pos {
   margin: 0 0 0.5rem;
-  //letter-spacing: 0.1rem;
   font-size: 1.4rem;
   color: #1174ae;
   font-weight: bold;
@@ -422,7 +350,6 @@
     margin: 2rem 0 0 3.5rem;
   }
   a {
-    // margin-inline-start: .5rem;
     font-size: 1.2rem;
     font-weight: 300;
     text-decoration: none;
@@ -454,76 +381,13 @@
 .first-uni {
   margin-bottom: 3rem;
 }
-// .photo {
-//   width: 15rem;
-//   max-width: 500px;
-//   width: 15rem;
-//  margin: 4rem 1rem 3rem 2rem; // (70px, 22px, 53px, 0px)
-
-//   position: relative;
-//   border: 20px solid #1174ae;
-// // }
 .photo {
   width: 15rem;
   height: 19rem;
-  //object-fit: cover;
-  // max-width: 200px;
   border: 10px solid #1174ae;
   margin: 3rem 1rem 4rem 5rem;
 }
-// .photo::before {
-//   content: "";
-//   position: absolute;
-//   top: -10px;
-//   left: -10px;
-//   width: calc(100% + 20px);
-//   height: calc(100% + 20px);
-//   border: 2px solid grey; /* Внутрішня рамка (сіра) */
-// }
 
-// @media (max-width: 768px) {
-//   /* Планшети */
-//   .name {
-//     font-size: 3rem;
-//     line-height: 3rem;
-//   }
-//   .work-now {
-//     font-size: 1.4rem;
-//   }
-// }
-
-// @media (max-width: 600px) {
-//   /* Маленькі планшети */
-//   .name {
-//     font-size: 3.5rem; /* Трохи зменшуємо для компактності */
-//     line-height: 4.5rem;
-//   }
-//   .work-now {
-//     font-size: 1.3rem;
-//   }
-// }
-
-// @media (max-width: 480px) {
-//   /* Мобільні пристрої */
-//   .name {
-//     font-size: 3rem;
-//     line-height: 4rem;
-//   }
-//   .work-now {
-//     font-size: 1.2rem; /* Менший шрифт для маленьких екранів */
-//   }
-// }
-
-// @media (max-width: 320px) {
-//   /* Дуже маленькі мобільні пристрої */
-//   .name {
-//     font-size: 2.5rem; /* Зменшити ще більше */
-//     line-height: 3rem;
-//   }
-//   .work-now {
-//     font-size: 1rem; /* Адаптивний шрифт */
-//   }
-// }
 @media (max-width: 1024px) {
   /* Десктопи */
   .name {
