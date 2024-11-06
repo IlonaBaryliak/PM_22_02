@@ -1,0 +1,23 @@
+{
+  "skills": [
+    { "name": "Adobe Photoshop", "progress": 80 },
+    { "name": "Adobe Illustrator", "progress": 50 },
+    { "name": "Microsoft Word", "progress": 90 },
+    { "name": "Microsoft Powerpoint", "progress": 75 },
+    { "name": "HTML/CSS", "progress": 85 }
+  ],
+  "hobbies": [
+    { "name": "Book Reading", "progress": 90 },
+    { "name": "Travelling", "progress": 80 },
+    { "name": "Playing Chess", "progress": 75 },
+    { "name": "Graphic Design", "progress": 85 },
+    { "name": "Painting", "progress": 70 }
+  ],
+  "languages": [
+    { "name": "English", "progress": 90 },
+    { "name": "French", "progress": 75 },
+    { "name": "Spanish", "progress": 80 },
+    { "name": "German", "progress": 70 },
+    { "name": "Arabic", "progress": 60 }
+  ]
+}
