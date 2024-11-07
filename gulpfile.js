@@ -79,7 +79,7 @@ gulp.task("copy-bootstrap", function () {
 
 // Таск для автоматичного копіювання JSON в dist
 gulp.task("copy-json", function () {
-  return gulp.src("app/data/**/*.json").pipe(gulp.dest("dist/data"));
+  return gulp.src("data/**/*.json").pipe(gulp.dest("dist/data"));
 });
 
 // Таск для автоматичного перезавантаження сторінки
@@ -87,12 +87,11 @@ gulp.task("serve", function () {
   browserSync.init({
     server: {
       baseDir: "./dist",
-    },
-    port: 8080,
+    }
   });
 
   gulp
-    .watch("app/data/**/*.json", gulp.series("copy-json"))
+    .watch("data/**/*.json", gulp.series("copy-json"))
     .on("change", browserSync.reload);
   gulp.watch("app/js/**/*.js").on("change", browserSync.reload);
   gulp.watch("app/**/*.html").on("change", browserSync.reload);

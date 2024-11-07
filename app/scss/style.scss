@@ -70,7 +70,7 @@ $blue-color: #1174ae;
   width: 100%; /* Використовуємо відсоткову ширину для адаптивності */
   background-color: $primary-color;
   box-sizing: border-box;
-
+  //height: 100%;
   flex-direction: row;
   align-items: flex-start;
   position: relative; /* Додаємо позицію відносно для можливого позиціонування */

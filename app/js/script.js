@@ -85,20 +85,19 @@ function showOrHide(block) {
 
 // getData(); // Виклик асинхронної функції для отримання даних
 
-// Завантажуємо дані з data.json
 async function getData() {
   try {
-    const response = await fetch("data/data.json"); 
+    const response = await fetch("http://localhost:8080/data/data.json",{cache: "no-store"});
     if (!response.ok) {
       throw new Error("Помилка при завантаженні даних");
     }
     const data = await response.json();
-    renderData(data); // Передаємо отримані дані для відображення
+    renderData(data);
   } catch (error) {
     console.error("Помилка при завантаженні даних:", error);
+    alert("Сталася помилка при завантаженні даних");
   }
 }
-
 // Функція для рендеру даних на сторінці
 function renderData(data) {
   renderSkills(data.skills);
@@ -132,7 +131,6 @@ function renderSkills(skills) {
     }, 100); // Затримка, щоб забезпечити старт анімації
   });
 }
-// Функція для відображення хобі
 
 // Функція для відображення хобі
 function renderHobbies(hobbies) {
