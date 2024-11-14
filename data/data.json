@@ -1,7 +1,7 @@
 {
   "skills": [
-    { "name": "Adobe Photoshop", "progress": 25 },
-    { "name": "Adobe Illustrator", "progress": 0 },
+    { "name": "Adobe Photoshop", "progress": 20 },
+    { "name": "Adobe Illustrator", "progress": 50 },
     { "name": "Microsoft Word", "progress": 90 },
     { "name": "Microsoft Powerpoint", "progress": 75 },
     { "name": "HTML/CSS", "progress": 85 }
